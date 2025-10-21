@@ -52,7 +52,7 @@ const HomePage = () => {
               <IconButton href="https://github.com/Shafee25" target="_blank" color="inherit" sx={{ mr: 1, border: '1px solid #fff', borderRadius: '50%' }}>
                 <GitHubIcon />
               </IconButton>
-              <IconButton href="https://linkedin.com/in/shafee-ahamed-b893a2235/" target="_blank" color="inherit" sx={{ border: '1px solid #fff', borderRadius: '50%' }}>
+              <IconButton href="www.linkedin.com/in/shafee-ahamed" target="_blank" color="inherit" sx={{ border: '1px solid #fff', borderRadius: '50%' }}>
                 <LinkedInIcon />
               </IconButton>
             </Box>
