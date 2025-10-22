@@ -3,6 +3,7 @@ import { Container, Typography, Button, Box, Grid, IconButton } from '@mui/mater
 // We NO LONGER need RouterLink, so it has been removed from this import
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import { styled } from '@mui/system';
 
 import profilePhoto from '../assets/images/profile-photo.png';
@@ -54,6 +55,9 @@ const HomePage = () => {
               </IconButton>
               <IconButton href="https://www.linkedin.com/in/shafee-ahamed/" target="_blank" color="inherit" sx={{ border: '1px solid #fff', borderRadius: '50%' }}>
                 <LinkedInIcon />
+              </IconButton>
+              <IconButton href="https://www.linkedin.com/in/shafee-ahamed/" target="_blank" color="inherit" sx={{ border: '1px solid #fff', borderRadius: '50%' }}>
+                <InstagramIcon />
               </IconButton>
             </Box>
 
