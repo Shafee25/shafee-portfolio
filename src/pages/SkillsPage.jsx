@@ -10,10 +10,6 @@ const skillsData = {
     'Programming Languages': ['Java', 'C'],
 };
 
-// --- THIS IS THE FIX ---
-// We now use a nested grid system to create a clean, balanced layout
-// instead of the previous chaotic arrangement.
-
 const SkillCategory = ({ category, skills }) => (
     <Paper elevation={3} sx={{ p: 3, backgroundColor: 'background.paper', height: '100%' }}>
         <Typography variant="h5" gutterBottom sx={{ color: 'primary.main', fontWeight: 'bold' }}>
@@ -32,12 +28,9 @@ const SkillsPage = () => {
         <Container maxWidth="lg" sx={{ py: 5 }}>
             <SectionTitle title="My Skills" />
             <Grid container spacing={4}>
-                {/* Main, full-width category */}
                 <Grid item xs={12}>
                     <SkillCategory category="Web Development" skills={skillsData['Web Development']} />
                 </Grid>
-
-                {/* Left column with two categories */}
                 <Grid item xs={12} md={6}>
                     <Grid container spacing={4}>
                         <Grid item xs={12}>
@@ -48,8 +41,6 @@ const SkillsPage = () => {
                         </Grid>
                     </Grid>
                 </Grid>
-
-                {/* Right column with two smaller categories */}
                 <Grid item xs={12} md={6}>
                      <Grid container spacing={4}>
                         <Grid item xs={12}>

@@ -3,14 +3,11 @@ import { Card, CardContent, CardMedia, Typography, Chip, Box } from '@mui/materi
 
 const ProjectCard = ({ title, description, techStack, imageUrl }) => {
     return (
-        // --- THIS IS THE FIX ---
-        // By setting height to 100% and using flexbox, we ensure all cards in a row
-        // stretch to the height of the tallest card, creating a perfect grid.
         <Card sx={{
-            height: '100%',
+            height: '100%', // This is the key fix
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'space-between', // Pushes content apart to fill space
+            justifyContent: 'space-between',
             backgroundColor: 'background.paper',
             transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
             '&:hover': {
@@ -21,7 +18,7 @@ const ProjectCard = ({ title, description, techStack, imageUrl }) => {
             <Box>
                 <CardMedia
                     component="img"
-                    height="180" // Increased height for better visuals
+                    height="180"
                     image={imageUrl || "https://via.placeholder.com/400x200?text=Project+Image"}
                     alt={`${title} screenshot`}
                 />
@@ -34,7 +31,7 @@ const ProjectCard = ({ title, description, techStack, imageUrl }) => {
                     </Typography>
                 </CardContent>
             </Box>
-            <Box sx={{ p: 2, pt: 0 }}> {/* Tech stack now has its own container for better spacing */}
+            <Box sx={{ p: 2, pt: 0 }}>
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                     {techStack.map((tech, index) => (
                         <Chip key={index} label={tech} size="small" variant="outlined" color="primary" />
