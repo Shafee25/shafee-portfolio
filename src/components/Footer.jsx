@@ -11,7 +11,7 @@ const Footer = () => {
                 px: 2,
                 mt: 'auto',
                 backgroundColor: (theme) =>
-                    theme.palette.mode === 'light'
+                    theme.palette.mode === 'primary.main'
                         ? theme.palette.grey[200]
                         : theme.palette.grey[800],
             }}
