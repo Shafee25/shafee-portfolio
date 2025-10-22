@@ -24,7 +24,7 @@ const Navbar = () => {
       }}
     >
       <Toolbar>
-        <Typography variant="h6" component="a" href="#home" sx={{ flexGrow: 1, textDecoration: 'none', color: 'inherit' }}>
+        <Typography variant="h6" component="a" href="#home" sx={{ flexGrow: 1, textDecoration: 'none', color: 'primary.main' }}>
           Faris Shafee Ahamed
         </Typography>
         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
