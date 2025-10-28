@@ -18,17 +18,15 @@ const projects = [
         techStack: ['React', 'Node.js', 'Microsoft Azure', 'Azure Functions', 'Cosmos DB'],
         imageUrl: lowStockAlertImage
     },
-    // Add more projects here. For a perfect grid, add them in pairs (2, 4, 6, etc.)
 ];
 
 const ProjectPage = () => {
     return (
         <Container maxWidth="lg" sx={{ py: 5 }}>
             <SectionTitle title="My Projects" />
-            <Grid container spacing={5} justifyContent="center"> {/* Increased spacing */}
+            <Grid container spacing={5} justifyContent="center">
                 {projects.map((project, index) => (
-                    // --- THIS IS THE FIX ---
-                    // md={6} makes each card take up half the width on medium screens and larger, creating a 2-column layout.
+                    // This creates a 2-column layout on medium screens and larger
                     <Grid item key={index} xs={12} sm={8} md={6}>
                         <ProjectCard {...project} />
                     </Grid>

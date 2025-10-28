@@ -1,48 +1,26 @@
-import React from 'react';
-import { Box } from '@mui/material';
-import Navbar from './components/Navbar.jsx';
-import Footer from './components/Footer.jsx';
-
-// Import all the sections
-import HomePage from './pages/HomePage.jsx';
-import AboutPage from './pages/AboutPage.jsx';
-import ProjectPage from './pages/ProjectPage.jsx'; // Make sure this is the correct filename
-import SkillsPage from './pages/SkillsPage.jsx';
-import ResumePage from './pages/ResumePage.jsx';
-import ContactPage from './pages/ContactPage.jsx';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider, CssBaseline } from '@mui/material';
+import { lightTheme, darkTheme } from './theme';
+import Portfolio from './pages/Portfolio';
+import AdminLogin from './pages/AdminLogin';
+import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode
+  const toggleTheme = () => setIsDarkMode(!isDarkMode);
+
   return (
-    <Box sx={{ bgcolor: 'background.default', color: 'text.primary' }}>
-      <Navbar />
-      <main>
-        {/* Each component is now a section with an ID */}
-        <section id="home">
-          <HomePage />
-        </section>
-
-        <section id="about">
-          <AboutPage />
-        </section>
-
-        <section id="projects">
-          <ProjectPage />
-        </section>
-
-        <section id="skills">
-          <SkillsPage />
-        </section>
-
-        <section id="resume">
-          <ResumePage />
-        </section>
-
-        <section id="contact">
-          <ContactPage />
-        </section>
-      </main>
-      <Footer />
-    </Box>
+    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+      <CssBaseline />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Portfolio isDarkMode={isDarkMode} toggleTheme={toggleTheme} />} />
+          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/dashboard" element={<AdminDashboard />} /> {/* This will be a protected route */}
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 

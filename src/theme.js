@@ -1,51 +1,35 @@
 import { createTheme } from '@mui/material/styles';
 
-const theme = createTheme({
+const commonSettings = {
+  typography: {
+    fontFamily: "'Inter', 'Roboto', sans-serif", // A clean, modern font
+  },
+};
+
+export const lightTheme = createTheme({
+  ...commonSettings,
   palette: {
-    mode: 'dark', // This enables the dark theme
-    primary: {
-      main: '#FFD700', // A vibrant gold/yellow accent
-    },
+    mode: 'light',
     background: {
-      default: '#121212', // A deep, dark background
-      paper: '#1E1E1E',   // Slightly lighter background for cards and surfaces
+      default: '#f5f5f5',
+      paper: '#ffffff',
     },
     text: {
-      primary: '#FFFFFF',
-      secondary: '#B0B0B0',
-    },
-  },
-  typography: {
-    fontFamily: "'Poppins', 'Roboto', 'Helvetica', 'Arial', sans-serif",
-    h1: {
-      fontSize: '4rem',
-      fontWeight: 700,
-    },
-    h2: {
-      fontSize: '3rem',
-      fontWeight: 600,
-      marginBottom: '1rem',
-    },
-    h3: {
-        fontSize: '2.2rem',
-        fontWeight: 600,
-    },
-    h4: {
-        fontSize: '1.5rem',
-        fontWeight: 500,
-    },
-  },
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          borderRadius: '8px',
-          textTransform: 'none',
-          fontWeight: 600,
-        },
-      },
+      primary: '#000000',
     },
   },
 });
 
-export default theme;
+export const darkTheme = createTheme({
+  ...commonSettings,
+  palette: {
+    mode: 'dark',
+    background: {
+      default: '#121212',
+      paper: '#1E1E1E',
+    },
+    text: {
+      primary: '#FFFFFF',
+    },
+  },
+});
